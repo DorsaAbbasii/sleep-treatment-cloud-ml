@@ -1,0 +1,19 @@
+{
+    "model_type": "Ridge Regression",
+    "purpose": "Exploratory prediction of individual Temazepam treatment effect on Sleep Efficiency",
+    "features": [
+        "age",
+        "sex"
+    ],
+    "target": "treatment_effect_sleep_efficiency",
+    "number_of_subjects": 22,
+    "treatment": "Temazepam",
+    "control": "Placebo",
+    "mean_observed_treatment_effect": 2.3207563892577814,
+    "limitations": [
+        "Only 22 subjects",
+        "Exploratory proof-of-concept",
+        "Age and sex have weak predictive power",
+        "Not intended for clinical decision making"
+    ]
+}

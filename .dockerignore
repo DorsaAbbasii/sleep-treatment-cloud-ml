@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.edf
+*.xls
+*.csv
+results/
+SHA256SUMS.txt
+index.htmls
