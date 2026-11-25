@@ -1,0 +1,17 @@
+{
+  "platform": "openstack",
+  "started_utc": "2026-11-25T14:17:20.187671+00:00",
+  "requests_per_run": 100,
+  "runs": 3,
+  "warmup_per_run": 5,
+  "concurrency": 1,
+  "pause_s": 2,
+  "timeout_s": 10,
+  "payload": {
+    "age": 48,
+    "sex": "Female"
+  },
+  "percentile_method": "nearest rank",
+  "latency_definition": "request start through complete HTTP body read; fresh HTTP request, successful validated responses only",
+  "throughput_definition": "validated successful responses divided by measured run wall time; excludes pauses and warmup"
+}
