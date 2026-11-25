@@ -603,3 +603,42 @@ The emphasis is not only on model performance but also on **reproducibility, con
 This software is provided for educational and research demonstration purposes only.
 
 It is **not a medical device**, **not a clinical prediction system**, and **must not be used to recommend medication or treatment to patients**.
+
+## OpenStack Private Cloud Deployment and Performance Evaluation
+
+The containerized machine learning service was successfully deployed on the university OpenStack private cloud using Ubuntu 24.04, Docker, FastAPI and Uvicorn.
+
+### Experimental Highlights
+
+- Virtual machine: 2 vCPUs, 4 GB RAM, 40 GB storage.
+- Secure remote access through OpenVPN and SSH tunneling.
+- 31,000 benchmark requests across 27 saved experimental runs.
+- Zero reported failed requests and non-2xx responses.
+- 157.15% improvement in concurrent inference throughput using two Uvicorn workers.
+- 61.08% reduction in mean response latency.
+- Automated statistical analysis and generation of eight research figures.
+
+### Performance Optimization
+
+| Metric | 1 Worker | 2 Workers |
+|---|---:|---:|
+| Throughput (requests/s) | 137.98 | 354.83 |
+| Mean latency (ms) | 72.488 | 28.209 |
+| Mean P95 latency (ms) | 87.33 | 46.00 |
+
+Results represent three repetitions per configuration, with 1,000 requests per run and a concurrency level of 10.
+
+![Worker throughput comparison](results/cloud/openstack/analysis/worker_throughput_rps.png)
+
+![Worker latency comparison](results/cloud/openstack/analysis/worker_mean_latency_ms.png)
+
+### Reproducing the Analysis
+
+```bash
+python -m pip install -r requirements-analysis.txt
+python src/analyze_cloud_benchmarks.py --platform openstack
+```
+
+Full experimental methodology, raw benchmark logs, statistical summaries and research limitations are available in the [OpenStack experiment documentation](results/cloud/openstack/OPENSTACK_EXPERIMENTS.md).
+
+The service is an exploratory research proof of concept and is not intended for clinical decision-making. Public-cloud comparative evaluation remains future work at this stage.
