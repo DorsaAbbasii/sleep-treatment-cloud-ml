@@ -10,3 +10,4 @@ venv/
 *.xls
 
 data/
+/results/cloud/openstack/openstack-benchmark-results.tar.gz
